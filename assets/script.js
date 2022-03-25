@@ -8,23 +8,29 @@ var todayTime =moment().format('LT');
 $("#time").html(todayTime);
 console.log(todayTime);
 
-
-
+ 
 //Timeblock time
 
-for (var i = 9; i <= 17; i++); {
-    
-if(i > todayTime){
-    $("").addClass('future');
+
+var scheduleTime = function() {
+    var hour= moment().hours();
+    console.log(hour)
+for (var i = 9; i <= 17; i++){
+     var taskEl = document.getElementById(i);
+    console.log(taskEl)   
+if(i > hour) {
+    $("textarea").addClass('future');
 }
-else if(i == todayTime){
+else if(i == hour){
     $("textarea").addClass('present');
 }
 else{ 
     $("textarea").addClass('past');   
-}};
+}}
 
+}
 
+scheduleTime();
 
 //var saveTasks = function() {
   //  localStorage.setItem("tasks", JSON.stringify(tasks));
