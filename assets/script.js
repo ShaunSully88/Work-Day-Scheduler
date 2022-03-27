@@ -1,3 +1,7 @@
+
+
+
+
 //Today's Date displayed on main page
 var todayDate =moment().format('dddd, MMM Do YYYY');
 $("#today").html(todayDate);
@@ -32,17 +36,22 @@ else {
 
 scheduleTime();
 
+
+//save to localStorage after clicking save button
 $(".saveBtn").on("click", function () {
-    // Get nearby values of the description in JQuery
+    
     var text = $(this).siblings(".description").val();
     var time = todayTime;
-    var textarea = document.querySelector("textarea");
-    // Save text in local storage
-    localStorage.setItem(time, text);
+    
+    localStorage.setItem(text, time);
     
   
 })
 
+// on page refresh, bring back saved text
+$(window).on('load', function() {
+    localStorage.getItem(key);
+})
 
 
 
