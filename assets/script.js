@@ -19,34 +19,34 @@ for (var i = 9; i <= 17; i++){
      var taskEl = document.getElementById("hour-" + i);
     console.log(taskEl)   
 if(i > hour) {
-    $("taskEl").addClass('future');
+    $(taskEl).addClass('future');
 }
-else if(i == hour){
-    $("taskEl").addClass('present');
+else if(i == hour) {
+    $(taskEl).addClass('present');
 }
-else{ 
-    $("taskEl").addClass('past');   
+else { 
+    $(taskEl).addClass('past');   
 }}
 
 }
 
 scheduleTime();
 
-//var saveTasks = function() {
-  //  localStorage.setItem("tasks", JSON.stringify(tasks));
-//  };
+var saveTasks = function() {
+   localStorage.setItem("tasks", JSON.stringify(tasks));
+ };
   
- // $(".list-group").on("click", "p", function() {
-  //  var text = $(this)
-  //  .text()
- //   .trim();
-  //  console.log(text);
+ $(".list-group").on("click", "p", function() {
+  var text = $(this)
+    .text()
+   .trim();
+    console.log(text);
   
-  //  var textInput = $("<textarea>")
-   // .addClass("form-control")
-  //  .val(text);
-   // $(this).replaceWith(textInput);
+    var textInput = $("<textarea>")
+    .addClass("form-control")
+   .val(text);
+    $(this).replaceWith(textInput);
   
-   // textInput.trigger("focus");
+    textInput.trigger("focus");
     
- // });
+  });
