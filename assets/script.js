@@ -35,9 +35,14 @@ scheduleTime();
 $(".saveBtn").on("click", function () {
     // Get nearby values of the description in JQuery
     var text = $(this).siblings(".description").val();
-    var time = $(this).parent().attr("p");
+    var time = todayTime;
+    var textarea = document.querySelector("textarea");
     // Save text in local storage
     localStorage.setItem(time, text);
+    
+  
 })
+
+
 
 
