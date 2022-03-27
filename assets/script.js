@@ -16,12 +16,12 @@ var scheduleTime = function() {
     var hour= moment().hours();
     console.log(hour)
 for (var i = 9; i <= 17; i++){
-     var taskEl = document.getElementById(i);
+     var taskEl = document.getElementById("hour-" + i);
     console.log(taskEl)   
-if(i > hour) {
+if(taskEl > hour) {
     $("textarea").addClass('future');
 }
-else if(i == hour){
+else if(taskEl == hour){
     $("textarea").addClass('present');
 }
 else{ 
