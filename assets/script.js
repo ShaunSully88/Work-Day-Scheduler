@@ -32,21 +32,12 @@ else {
 
 scheduleTime();
 
-var saveTasks = function() {
-   localStorage.setItem("tasks", JSON.stringify(tasks));
- };
-  
- $(".list-group").on("click", "p", function() {
-  var text = $(this)
-    .text()
-   .trim();
-    console.log(text);
-  
-    var textInput = $("<textarea>")
-    .addClass("form-control")
-   .val(text);
-    $(this).replaceWith(textInput);
-  
-    textInput.trigger("focus");
-    
-  });
+$(".saveBtn").on("click", function () {
+    // Get nearby values of the description in JQuery
+    var text = $(this).siblings(".description").val();
+    var time = $(this).parent().attr("p");
+    // Save text in local storage
+    localStorage.setItem(time, text);
+})
+
+
