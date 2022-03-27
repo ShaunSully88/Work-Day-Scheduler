@@ -18,14 +18,14 @@ var scheduleTime = function() {
 for (var i = 9; i <= 17; i++){
      var taskEl = document.getElementById("hour-" + i);
     console.log(taskEl)   
-if(taskEl > hour) {
-    $("textarea").addClass('future');
+if(i > hour) {
+    $("taskEl").addClass('future');
 }
-else if(taskEl == hour){
-    $("textarea").addClass('present');
+else if(i == hour){
+    $("taskEl").addClass('present');
 }
 else{ 
-    $("textarea").addClass('past');   
+    $("taskEl").addClass('past');   
 }}
 
 }
